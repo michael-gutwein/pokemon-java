@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -12,11 +13,11 @@ class pokemon{
  Scanner ScanMove = new Scanner(moves);
  while (ScanPokemon.hasNextLine()) {
  String lineP = ScanPokemon.nextLine();
- System.out.println(lineP);
+ System.out.println(Arrays.toString(lineP.split(",")));
  }
   while (ScanMove.hasNextLine()) {
  String lineM = ScanMove.nextLine();
- System.out.println(lineM);
+ System.out.println((Arrays.toString(lineM.split(","))));
  }
  ScanPokemon.close();
  ScanMove.close();
