@@ -1,8 +1,3 @@
-import java.util.Arrays;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 class Pokemon{
   private String num;
   private String name;
@@ -10,7 +5,6 @@ class Pokemon{
   private String hp;
   private String ap;
   private String dp;
-  private int power;
   
  public Pokemon(String num, String name, String type, String hp, String ap, String dp) {
    
@@ -64,31 +58,17 @@ class Pokemon{
     public void setDefence(String dp) {
         this.dp = dp;
     }
+    
+    
+    public String toString(){
+       
+            return num +"." + " " + name + " " + type + " " + hp + " " + ap + " " + dp;
+        }
+    
+
+    
  
- public static void main(String[] args) {
- try {
- File pokemon = new File("pokemon.csv");
- Scanner ScanPokemon = new Scanner(pokemon);
- while (ScanPokemon.hasNextLine()) {
- String lineP = ScanPokemon.nextLine();
- String[] pList = lineP.split(",");
- System.out.println(pList);
-   Pokemon p =  new Pokemon(pList[0], pList[1], pList[2], pList[3], pList[4], pList[5]);{
 
-     
-}
- }
- ScanPokemon.close();
- }
- catch (FileNotFoundException e) {
- System.out.println("File does not exist.");
- }
-
-
-
- 
- 
- }
 }
 
 
