@@ -2,13 +2,20 @@ class Move{
   private String name;
   private String type;
   private String power;
-  
+  private String status;
+  //import static method that reads all the things and stores it 
  public Move(String name, String type, String power) {
    
   this.name = name;
   this.type = type;
   this.power = power;
  }
+ 
+ public Move(Move special){
+  this.type = type; 
+  this.status = status;
+ }
+ 
  
  public String getName() {
   return name; 

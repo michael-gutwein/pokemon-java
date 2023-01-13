@@ -65,6 +65,7 @@ class Pokemon{
             return num +"." + " " + name + " " + type + " " + hp + " " + ap + " " + dp;
         }
     
+    
 
     
  
