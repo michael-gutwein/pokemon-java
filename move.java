@@ -1,3 +1,8 @@
+import java.util.Arrays;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 class Move{
   private String name;
   private String type;
@@ -58,6 +63,37 @@ class Move{
       
     }
     
+    public Pokemon[] a(){
+      
+      
+     return  null;
+    }
+    
+     public static void moves(String[] args) {
+ try {
+     File moves = new File("moves.csv");
+     File Smoves = new File("special_status_pokemon.csv");
+     Scanner ScanMoves = new Scanner(moves);
+     Scanner ScanSmoves = new Scanner(Smoves);
+        while (ScanMoves.hasNextLine()) {
+ String lineM = ScanMoves.nextLine();
+ String[] mList = lineM.split(",");
+ Move m =  new Move(mList[0], mList[1], mList[2]);{
+ }   
+    
+}
+   while (ScanSmoves.hasNextLine()) {
+     String lineSM = ScanSmoves.nextLine();
+     String[] smList = lineSM.split(",");
+     Move special = new Move(smList[0], smList[1], smList[2]);{
+     }
+     
+   }
  
 
+}
+  catch (FileNotFoundException e) {
+ System.out.println("File does not exist.");
+ }
+     }
 }

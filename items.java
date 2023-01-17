@@ -1,4 +1,4 @@
-class items{
+class bag{
   
   
   
