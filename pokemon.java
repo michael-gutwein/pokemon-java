@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -73,8 +74,9 @@ class Pokemon{
 
     
 
- public Pokemon ReadingPokemon() {
-
+ public static ArrayList<Pokemon> ReadingPokemon() {
+   ArrayList <Pokemon> PokemonGenerator = new ArrayList<Pokemon>();
+   
  try {
  File pokemon = new File("pokemon.csv");
  Scanner ScanPokemon = new Scanner(pokemon);
@@ -82,25 +84,40 @@ class Pokemon{
  String lineP = ScanPokemon.nextLine();
  String[] pList = lineP.split(",");
  Pokemon p =  new Pokemon(pList[0], pList[1], pList[2], pList[3], pList[4], pList[5]);{
-   return p;
+   PokemonGenerator.add(p);
  }
-
+ 
  }
  ScanPokemon.close();
  }
  catch (FileNotFoundException e) {
  System.out.println("File does not exist.");
  }
+ return PokemonGenerator;
+}
+ 
+ public static int RandomNumber(){
+   
+ int number = 1 + (int) (Math.random() * 151);
+ 
+ return number;
+ }
+ 
+ public static void main(String[] args){
+   
+ ReadingPokemon();
+
+ System.out.println(ReadingPokemon());
 
  
-
-
- return null;
+ for(int i = 1; i<= 4; i++){
+ System.out.println(RandomNumber());
+ }}
 }
-
     
  
 
-}
+
+
 
 
