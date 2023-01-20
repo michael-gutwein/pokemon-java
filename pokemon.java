@@ -120,7 +120,7 @@ class Pokemon{
  RandomPokemon();
  
  for(int i = 1; i<= 4; i++){
- System.out.println(RandomPokemon());
+ System.out.println(RandomPokemon()); 
  }
  }
 }

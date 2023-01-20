@@ -1,15 +1,12 @@
 class attack{
   
-  class attacker{
+
   
+ 
   
-  }
-  
-  class defender{
-    
-  }
-  
-  
-  
-  
+ 
+ 
+  public static void moves(String[] args) {
+
+}
 }

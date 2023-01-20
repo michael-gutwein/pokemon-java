@@ -1,14 +1,15 @@
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.Random;
 
 class Move{
   private String name;
   private String type;
   private String power;
   private String status;
-  //import static method that reads all the things and stores it 
  public Move(String name, String type, String power) {
    
   this.name = name;
@@ -69,7 +70,8 @@ class Move{
      return  null;
     }
     
-     public static void moves(String[] args) {
+     public static ArrayList<Move> ReadingMoves() {
+        ArrayList <Move> MoveGenerator = new ArrayList<Move>();
  try {
      File moves = new File("moves.csv");
      File Smoves = new File("special_status_pokemon.csv");
@@ -79,21 +81,39 @@ class Move{
  String lineM = ScanMoves.nextLine();
  String[] mList = lineM.split(",");
  Move m =  new Move(mList[0], mList[1], mList[2]);{
+   MoveGenerator.add(m);
  }   
     
 }
-   while (ScanSmoves.hasNextLine()) {
-     String lineSM = ScanSmoves.nextLine();
-     String[] smList = lineSM.split(",");
-     Move special = new Move(smList[0], smList[1], smList[2]);{
-     }
-     
-   }
  
 
 }
   catch (FileNotFoundException e) {
  System.out.println("File does not exist.");
  }
+  return MoveGenerator;
      }
+      public static int RandomNumber(){
+   
+ int number = 1 + (int) (Math.random() * 151);
+ 
+ return number;
+ }
+     
+public static Move RandomMoves(){
+  int number = RandomNumber();
+  ArrayList<Move> AllMoves = ReadingMoves();
+  
+  return AllMoves.get(number);
+   
+   
+ }
+public static void main(String[] args){
+ RandomMoves();
+ ReadingMoves();
+ 
+ for(int i = 1; i<= 4; i++){
+ System.out.println(RandomMoves()); 
+ }
+ }
 }
