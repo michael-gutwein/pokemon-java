@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.Random;
 
 class Pokemon{
   private String num;
@@ -102,17 +103,26 @@ class Pokemon{
  
  return number;
  }
+
+ public static Pokemon RandomPokemon(){
+  int number = RandomNumber();
+  ArrayList<Pokemon> All = ReadingPokemon();
+  return All.get(number);
+   
+   
+ }
+
+ 
  
  public static void main(String[] args){
    
  ReadingPokemon();
-
- System.out.println(ReadingPokemon());
-
+ RandomPokemon();
  
  for(int i = 1; i<= 4; i++){
- System.out.println(RandomNumber());
- }}
+ System.out.println(RandomPokemon());
+ }
+ }
 }
     
  
