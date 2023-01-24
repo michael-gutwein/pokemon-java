@@ -12,8 +12,9 @@ class Pokemon{
   private String hp;
   private String ap;
   private String dp;
+  private String status = "";
   
- public Pokemon(String num, String name, String type, String hp, String ap, String dp) {
+ public Pokemon(String num, String name, String type, String hp, String ap, String dp, String status) {
    
   this.num = num;  
   this.name = name;
@@ -21,6 +22,7 @@ class Pokemon{
   this.hp = hp;
   this.ap = ap;
   this.dp = dp;
+  this.status = status;
 
  }
     public String getNum() {
@@ -66,11 +68,19 @@ class Pokemon{
         this.dp = dp;
     }
     
+    public String getStatus() {
+      return null;
+    }
+    public void setStatus(String status) {
+      this.status = status;
+    }
+    
     
     public String toString(){
        
             return num +"." + " " + name + " " + type + " " + hp + " " + ap + " " + dp;
         }
+     
     
 
     
@@ -84,7 +94,7 @@ class Pokemon{
  while (ScanPokemon.hasNextLine()) {
  String lineP = ScanPokemon.nextLine();
  String[] pList = lineP.split(",");
- Pokemon p =  new Pokemon(pList[0], pList[1], pList[2], pList[3], pList[4], pList[5]);{
+ Pokemon p =  new Pokemon(pList[0], pList[1], pList[2], pList[3], pList[4], pList[5], pList[0]);{
    PokemonGenerator.add(p);
  }
  
@@ -99,7 +109,7 @@ class Pokemon{
  
  public static int RandomNumber(){
    
- int number = 1 + (int) (Math.random() * 151);
+ int number = 0 + (int) (Math.random() * 152);
  
  return number;
  }
@@ -123,11 +133,13 @@ class Pokemon{
  System.out.println(RandomPokemon()); 
  }
  }
+ 
+
+ 
+ 
 }
     
  
-
-
 
 
 
