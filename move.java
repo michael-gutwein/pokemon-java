@@ -10,7 +10,7 @@ class Move{
   private String type;
   private String power;
   private String status;
- public Move(String name, String type, String power) {
+ public Move(String name, String type, String power, String status) {
    
   this.name = name;
   this.type = type;
@@ -80,7 +80,7 @@ class Move{
         while (ScanMoves.hasNextLine()) {
  String lineM = ScanMoves.nextLine();
  String[] mList = lineM.split(",");
- Move m =  new Move(mList[0], mList[1], mList[2]);{
+ Move m =  new Move(mList[0], mList[1], mList[2], mList[0]);{
    MoveGenerator.add(m);
  }   
     
@@ -108,6 +108,14 @@ public static Move RandomMoves(){
    
    
  }
+
+public static Move Statuses(){
+  ReadingMoves();
+  
+  
+  
+  return null;
+}
 public static void main(String[] args){
  RandomMoves();
  ReadingMoves();
@@ -116,4 +124,6 @@ public static void main(String[] args){
  System.out.println(RandomMoves()); 
  }
  }
-}
+
+   
+ }
