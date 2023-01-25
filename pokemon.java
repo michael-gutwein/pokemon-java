@@ -121,7 +121,16 @@ class Pokemon{
    
    
  }
-
+ public void generateTeam(){
+    ReadingPokemon();
+ RandomPokemon();
+ 
+ for(int i = 1; i<= 4; i++){
+ System.out.println(RandomPokemon()); 
+ }
+   
+   
+ }
  
  
  public static void main(String[] args){
@@ -140,6 +149,8 @@ class Pokemon{
 }
     
  
+
+
 
 
 
