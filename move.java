@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Random;
-
+//generate random moves per pokemon ==> they can use them in battle
 class Move{
   private String name;
   private String type;
